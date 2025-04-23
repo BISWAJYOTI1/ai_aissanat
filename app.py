@@ -7,7 +7,7 @@ import datetime
 app = Flask(__name__)
 
 # 🔹 ENTER YOUR GOOGLE GEMINI API KEY BELOW
-GEMINI_API_KEY = "AIzaSyACnJzf-GQbxded4W36BKOoqoHAKr-vo4Q"
+GEMINI_API_KEY = "AIzaSyCT-BbDckYvCZCgxIUtMXZUn61KGyhpY4E"
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Log files
@@ -62,7 +62,7 @@ class AIMedicalAssistant:
             return self.symptom_responses[user_input]
         
         try:
-            model = genai.GenerativeModel("gemini-pro")
+            model = genai.GenerativeModel("gemini-2.0-flash")
             response = model.generate_content(user_input)
             ai_response = response.text.strip()
             self.symptom_responses[user_input] = ai_response
